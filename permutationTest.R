@@ -17,7 +17,7 @@ lt <- l1 + l2
 
 
 # test statistic
-test.diff <- mean(grp.1) - mean(grp.2)
+test.diff <- median(grp.1) - median(grp.2)
 
 
 it <- function(n){
@@ -26,7 +26,7 @@ it <- function(n){
     # looks at permutations of data, no replacement
     s = sample(data, lt, FALSE)
     # test statistic of each permutation, abitrary split
-    m1 = mean(s[1:l1]) - mean(s[(l1+1):lt])
+    m1 = median(s[1:l1]) - median(s[(l1+1):lt])
     # vector of test statistics
     M = c(M,m1)
   }
